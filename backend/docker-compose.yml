@@ -1,0 +1,51 @@
+version: '3.1'
+
+services:
+    nodejs:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: nodejs
+        container_name: coodesh_app
+        restart: unless-stopped
+        env_file: .env
+        depends_on:
+          - db
+        environment:
+            - MONGO_PROTOCOL=$MONGO_PROTOCOL
+            - MONGO_HOST=$MONGO_HOST
+            - MONGO_USERNAME=$MONGO_USERNAME
+            - MONGO_PASSWORD=$MONGO_PASSWORD
+            - MONGO_DB_NAME=$MONGO_DB_NAME
+        ports:
+            - "5000:5000"
+        volumes:
+            - .:/home/node/app
+            - node_modules:/home/node/app/node_modules
+        networks:
+            - app-network
+        command: sh -c './wait-for.sh db:27017 -- yarn dev'
+     
+    db:
+        image: mongo
+        container_name: coodesh_db
+        restart: unless-stopped
+        env_file: .env
+        ports:
+          - "27017:27017"
+        environment:
+          - MONGO_INITDB_ROOT_USERNAME=$MONGO_USERNAME
+          - MONGO_INITDB_ROOT_PASSWORD=$MONGO_PASSWORD
+        volumes:
+          - dbdata:/data/db
+        networks:
+          - app-network
+        command: mongod --quiet --logpath /dev/null
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  dbdata:
+  node_modules:
