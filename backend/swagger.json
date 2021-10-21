@@ -1,0 +1,59 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "version": "1.0.0",
+        "title": "FullStack Challenge Coodesh",
+        "description": "API for web scrapping products",
+        "termsOfService": "https://github.com/carona-jr",
+        "contact": {
+            "name": "Carlos Roberto",
+            "email": "carona_jr@hotmail.com",
+            "url": "https://github.com/carona-jr"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "servers": [
+        {
+            "url": "http://localhost:5000",
+            "description": "Local Server"
+        }
+    ],
+    "tags": [
+        {
+            "name": "CRUD"
+        }
+    ],
+    "paths": {
+        "/": {
+            "get": {
+                "tags": [
+                    "CRUD"
+                ],
+                "description": "Get a welcome message",
+                "operationId": "getIndex",
+                "parametes": [],
+                "responses": {
+                    "200": {
+                        "description": "success to obtain the message",
+                        "content": {
+                            "schema": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "security": [
+        {
+            "BearerAuth": {
+                "type": "http",
+                "scheme": "bearer"
+            }
+        }
+    ]
+}
