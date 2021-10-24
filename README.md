@@ -1,4 +1,4 @@
-# Coodesh FullStack Challenge
+# Fullstack Challenge 🏅 2021
 
 O projeto foi construído para o desafio da Coodesh, que consistia na criação de uma API e uma aplicação em React para visualização dos dados que foram coletados com a utilização de web scrapping do site Open Food Facts.
 
