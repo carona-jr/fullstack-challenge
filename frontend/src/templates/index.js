@@ -8,7 +8,7 @@ export default function Layout({ children, searchTerm, setSearchTerm, handleSear
     return (
         <Box w="100vw" minH="100vh" bgColor="white">
             <Flex w="100vw" flexDirection="column">
-                <Flex h={['15vh', '15vh', '9vh']} alignItems="center" justifyContent="space-between" flexDir={['column', 'column', 'row']} p="5" boxShadow="md" bgColor="blue.500">
+                <Flex h={['20vh', '20vh', '9vh']} alignItems="center" justifyContent="space-between" flexDir={['column', 'column', 'row']} p="6" boxShadow="md" bgColor="blue.500">
                     <Box>
                         <Text fontWeight="600" fontSize="large" fontSize="28px" opacity={0.85} color="#fff">Produtos</Text>
                     </Box>
@@ -16,7 +16,7 @@ export default function Layout({ children, searchTerm, setSearchTerm, handleSear
                         <InputGroup>
                             <Input
                                 value={searchTerm || ''}
-                                w="400px"
+                                w="300px"
                                 variant="filled"
                                 placeholder="pesquise..."
                                 onChange={e => setSearchTerm(e.target.value)}

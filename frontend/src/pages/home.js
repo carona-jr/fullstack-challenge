@@ -143,7 +143,7 @@ export default function Home({ products, setProducts, hasMore, setHasMore, pageC
                             ) :
                                 (<></>)
                         }
-                        height={isLargerThan768 ? '91vh' : '85vh'}
+                        height={isLargerThan768 ? '91vh' : '80vh'}
                         scrollThreshold={0.9}
                         endMessage={
                             products.documents.length > 20 || products.documents.length == 0 ? (
