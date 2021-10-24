@@ -29,3 +29,5 @@ Puppeteer
 ## Estrutura
 
 O repositório foi dividido em duas pastas contendo as duas soluções do desafio. A pasta **backend** está com os dados da API e instruções para a sua execução. Enquanto que a pasta **frontend** contém os arquivos da aplicação web com o passo a passo para rodar a aplicação.
+
+**challenge by coodesh**
