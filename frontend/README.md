@@ -1,4 +1,4 @@
-# API
+# React App
 
 ## Table of Contents
 
