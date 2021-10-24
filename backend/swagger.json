@@ -1,36 +1,28 @@
 {
-    "openapi": "3.0.1",
+    "swagger": "2.0.0",
     "info": {
-        "version": "1.0.0",
-        "title": "FullStack Challenge Coodesh",
-        "description": "API for web scrapping products",
-        "termsOfService": "https://github.com/carona-jr",
-        "contact": {
-            "name": "Carlos Roberto",
-            "email": "carona_jr@hotmail.com",
-            "url": "https://github.com/carona-jr"
-        },
-        "license": {
-            "name": "Apache 2.0",
-            "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
-        }
+        "title": "Coodesh Fullstack Challenge",
+        "description": "API for listing and scrapping products",
+        "version": "1.0.0"
     },
-    "servers": [
-        {
-            "url": "http://localhost:5000",
-            "description": "Local Server"
-        }
+    "produces": [
+        "application/json"
     ],
+    "host": "localhost:5000",
+    "basePath": "/",
     "tags": [
         {
-            "name": "CRUD"
+            "name": "General"
+        },
+        {
+            "name": "Products"
         }
     ],
     "paths": {
         "/": {
             "get": {
                 "tags": [
-                    "CRUD"
+                    "General"
                 ],
                 "description": "Get a welcome message",
                 "operationId": "getIndex",
@@ -46,14 +38,183 @@
                     }
                 }
             }
-        }
-    },
-    "security": [
-        {
-            "BearerAuth": {
-                "type": "http",
-                "scheme": "bearer"
+        },
+        "/products": {
+            "get": {
+                "tags": [
+                    "Products"
+                ],
+                "x-swagger-router-controller": "products",
+                "operationId": "getAllProducts",
+                "description": "Returns a list of products",
+                "responses": {
+                    "200": {
+                        "description": "Product list",
+                        "schema": {
+                            "$ref": "#/definitions/ProductList"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/products/{id}": {
+            "get": {
+                "tags": [
+                    "Products"
+                ],
+                "x-swagger-router-controller": "products",
+                "operationId": "getProduct",
+                "description": "Fetch a product",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "The product ID to fetch",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Product details",
+                        "schema": {
+                            "$ref": "#/definitions/Product"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
             }
         }
-    ]
+    },
+    "definitions": {
+        "Error": {
+            "required": [
+                "code",
+                "message"
+            ],
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
+        "ProductList": {
+            "required": [
+                "documents",
+                "count"
+            ],
+            "properties": {
+                "documents": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Product"
+                    }
+                },
+                "count": {
+                    "type": "integer"
+                }
+            }
+        },
+        "Product": {
+            "required": [
+                "_id",
+                "code",
+                "name",
+                "imported_t",
+                "status"
+            ],
+            "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "code": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "imported_t": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "DRAFT",
+                            "IMPORTED"
+                        ]
+                    }
+                },
+                "amount": {
+                    "type": "string"
+                },
+                "brands": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ProductInfo"
+                    }
+                },
+                "packages": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ProductInfo"
+                    }
+                },
+                "categories": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ProductInfo"
+                    }
+                },
+                "stores": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ProductInfo"
+                    }
+                },
+                "imageUrl": {
+                    "type": "string"
+                },
+                "createdAt": {
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "type": "string"
+                }
+            }
+        },
+        "ProductInfo": {
+            "required": [
+                "_id",
+                "name"
+            ],
+            "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string"
+                }
+            }
+        }
+    }
 }
