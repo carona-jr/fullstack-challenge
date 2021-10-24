@@ -1,6 +1,6 @@
 import {
-    Flex, Box, Text, Spinner, Center, Grid, GridItem, useDisclosure, ModalOverlay,
-    Modal, ModalBody, ModalCloseButton, ModalContent, Skeleton, ModalHeader
+    Flex, Box, Text, Center, Grid, GridItem, useDisclosure, ModalOverlay,
+    Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, useMediaQuery
 } from '@chakra-ui/react'
 import useSWR from 'swr'
 import { api } from '../services'
@@ -28,6 +28,7 @@ const fetcher = async url => {
 }
 
 export default function Home({ products, setProducts, hasMore, setHasMore, pageCount, setPageCount, searchTerm, loadingProducts }) {
+    const [isLargerThan768] = useMediaQuery("(min-width: 768px)")
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [product, setProduct] = useState({
         code: '',
@@ -142,7 +143,7 @@ export default function Home({ products, setProducts, hasMore, setHasMore, pageC
                             ) :
                                 (<></>)
                         }
-                        height="91vh"
+                        height={isLargerThan768 ? '91vh' : '85vh'}
                         scrollThreshold={0.9}
                         endMessage={
                             products.documents.length > 20 || products.documents.length == 0 ? (
