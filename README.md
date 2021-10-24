@@ -2,6 +2,14 @@
 
 O projeto foi construído para o desafio da Coodesh, que consistia na criação de uma API e uma aplicação em React para visualização dos dados que foram coletados com a utilização de web scrapping do site Open Food Facts.
 
+## Endereços
+
+Para visualizar o projeto rodando, acesse as **urls** abaixo:
+
+https://fullstack-challenge-frontend-alpha.vercel.app/
+
+https://coodesh-backend.herokuapp.com/docs/
+
 ## Iniciando
 
 ### Pré-requisitos
