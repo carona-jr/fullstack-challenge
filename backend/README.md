@@ -5,7 +5,7 @@
 * [Iniciando](#iniciando)
   * [Dotenv](#dotenv)
   * [API](#api)
-  * [Teste](#teste)
+  * [Testes](#testes)
   * [Docker](#docker)
 * [Documentação](#documentação)
 
@@ -38,9 +38,9 @@ Para rodar a aplicação em modo desenvolvedor, execute o script abaixo:
 yarn dev
 ```
 
-### Teste
+### Testes
 
-Execute os testes unitários com o comando abaixo:
+Os testes foram implementados utilizando o framework Jest no backend. Para executar os testes unitários com o comando abaixo:
 
 ```
 yarn test
@@ -63,7 +63,7 @@ docker-compose up --build
 
 Caso já tenha criado o container, rode o comando acima sem o parâmetro **--build**
 
-Para parar o container:
+Caso queira parar a execução do container:
 
 ```
 docker-compose down
