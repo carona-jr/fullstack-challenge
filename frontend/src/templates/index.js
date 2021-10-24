@@ -10,7 +10,7 @@ export default function Layout({ children, searchTerm, setSearchTerm, handleSear
             <Flex w="100vw" flexDirection="column">
                 <Flex h="9vh" alignItems="center" justifyContent="space-between" p="5" boxShadow="md" bgColor="blue.500">
                     <Box>
-                        <Text fontWeight="600" fontSize="large" opacity={0.85} color="white">Produtos</Text>
+                        <Text fontWeight="600" fontSize="large" fontSize="28px" opacity={0.85} color="#fff">Produtos</Text>
                     </Box>
                     <Box>
                         <InputGroup>
