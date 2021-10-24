@@ -40,7 +40,7 @@ yarn dev
 
 ### Testes
 
-Os testes foram implementados utilizando o framework Jest no backend. Para executar os testes unitários com o comando abaixo:
+Os testes foram implementados utilizando o framework Jest no backend. Para executar os testes unitários, rode o comando abaixo:
 
 ```
 yarn test
