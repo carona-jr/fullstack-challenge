@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+* [Iniciando](#iniciando)
+  * [Requisitos](#requisitos) 
+  * [Dotenv](#dotenv)
+  * [Aplicação](#aplicação)
+  * [Docker](#docker)
 
-In the project directory, you can run:
+## Iniciando
 
-### `yarn start`
+### Requisitos
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Os seguintes frameworks e tecnologias são necessárias para rodar esta API:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- NodeJS
+- Yarn
+- Docker
+- Docker Compose
 
-### `yarn test`
+### Dotenv
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Na raiz do projeto, adicione um arquivo **.env** para configurar as variáveis de ambiente da API.
 
-### `yarn build`
+```
+REACT_APP_BASE_URL=
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Aplicação
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Para instalar os pacotes do projeto, rode o seguinte comando:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+yarn install
+```
 
-### `yarn eject`
+Para rodar a aplicação em modo desenvolvedor, execute o script abaixo:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+yarn start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Docker
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Para criar o container do docker, execute o comando abaixo:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+docker-compose up --build
+```
 
-## Learn More
+Caso já tenha criado o container, rode o comando acima sem o parâmetro **--build**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Caso queira parar a execução do container:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+docker-compose down
+```
