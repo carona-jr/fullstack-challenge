@@ -8,7 +8,7 @@
     "produces": [
         "application/json"
     ],
-    "host": "localhost:5000",
+    "host": "coodesh-backend.herokuapp.com",
     "basePath": "/",
     "tags": [
         {
