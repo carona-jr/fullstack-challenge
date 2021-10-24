@@ -7,6 +7,7 @@
   * [API](#api)
   * [Teste](#teste)
   * [Docker](#docker)
+* [Documentação](#documentação)
 
 ## Iniciando
 
@@ -68,3 +69,12 @@ Para parar o container:
 docker-compose down
 ```
 
+## Documentação
+
+No projeto está instalado o swagger, que implementa o Open API 3.0 para os **endpoints** da aplicação REST. Para acessar a documentação da API, rode o projeto e acesse a rota abaixo:
+
+```
+/docs
+```
+
+Por exemplo, caso esteja rodando no **localhost** na porta 5000, entre no endereço http://localhost:5000/docs
