@@ -3,6 +3,7 @@
 ## Table of Contents
 
 * [Iniciando](#iniciando)
+  * [Requisitos](#requisitos) 
   * [Dotenv](#dotenv)
   * [API](#api)
   * [Testes](#testes)
@@ -10,6 +11,15 @@
 * [Documentação](#documentação)
 
 ## Iniciando
+
+### Requisitos
+
+Os seguintes frameworks e tecnologias são necessárias para rodar esta API:
+
+- NodeJS
+- Yarn
+- Docker
+- Docker Compose
 
 ### Dotenv
 
