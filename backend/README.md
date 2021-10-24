@@ -58,13 +58,6 @@ yarn test
 
 ### Docker
 
-Requisitos:
-
-```
-docker
-docker-compose
-```
-
 Para criar o container do docker, execute o comando abaixo:
 
 ```
