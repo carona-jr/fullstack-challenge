@@ -47,6 +47,36 @@
                 "x-swagger-router-controller": "products",
                 "operationId": "getAllProducts",
                 "description": "Returns a list of products",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Return an array of items limited by this number",
+                        "required": false,
+                        "type": "int"
+                    },
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "description": "Return an array of items skipped by this number",
+                        "required": false,
+                        "type": "int"
+                    },
+                    {
+                        "name": "sortBy",
+                        "in": "query",
+                        "description": "Sort the array of items (eg. name:asc, createdAt:desc)",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "Find all items equals this string (eg. cookies)",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "Product list",
